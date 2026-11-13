@@ -16,11 +16,11 @@ npm run build
 npm run preview
 ```
 
-Generate all PNG icons from the SVG with `npm run generate-icons`. The Vite base is `/portfolio/`; change the single `base` constant in `vite.config.js` when deploying under another repository name.
+Generate all PNG icons from the SVG with `npm run generate-icons`. Vercel builds use the domain root by default. Set `VITE_BASE_PATH` to a slash-delimited subpath when deploying elsewhere, such as `/nurse-pay-pwa/` for GitHub Pages.
 
 ## GitHub Pages
 
-Create a repository, set the Vite base to match its name, enable **Settings > Pages > Source: GitHub Actions**, and push to `main`. The workflow runs tests, builds `dist/`, and deploys it with the official Pages actions.
+Create a repository, enable **Settings > Pages > Source: GitHub Actions**, and push to `main`. The workflow sets `VITE_BASE_PATH` from the repository name, builds `dist/`, and deploys it with the official Pages actions. For a manual GitHub Pages build, run `VITE_BASE_PATH=/nurse-pay-pwa/ npm run build`.
 
 ## iPhone installation and updates
 

@@ -54,7 +54,7 @@ function App() {
               <h2 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-paper md:text-6xl">A little more detail, <span className="text-acid">one click away.</span></h2>
               <p className="mt-5 max-w-lg leading-7 text-muted">Download my CV for a concise look at my experience, education, projects, and the tools I use to build thoughtful digital products.</p>
             </div>
-            <a href="/portfolio/emmanuel-mba-cv.pdf" download className="cv-download"><Download size={18} /> Download CV <ArrowUpRight size={16} /></a>
+            <a href={`${import.meta.env.BASE_URL}emmanuel-mba-cv.pdf`} download className="cv-download"><Download size={18} /> Download CV <ArrowUpRight size={16} /></a>
           </div>
         </section>
 

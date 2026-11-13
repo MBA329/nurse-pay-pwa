@@ -2,7 +2,13 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-const base = '/portfolio/'
+const normalizeBasePath = (value) => {
+  const path = value?.trim() || '/'
+  const withLeadingSlash = path.startsWith('/') ? path : `/${path}`
+  return withLeadingSlash.endsWith('/') ? withLeadingSlash : `${withLeadingSlash}/`
+}
+
+const base = normalizeBasePath(process.env.VITE_BASE_PATH)
 
 export default defineConfig({
   base,
