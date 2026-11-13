@@ -1,0 +1,10 @@
+import { HashRouter, Link, Route, Routes } from 'react-router-dom'
+import { StoreProvider } from './store/StoreContext'
+import BottomTabs from './components/BottomTabs'
+import InstallHint from './components/InstallHint'
+import UpdateBanner from './components/UpdateBanner'
+import Home from './pages/Home'
+import Money from './pages/Money'
+import Schedule from './pages/Schedule'
+import Settings from './pages/Settings'
+export default function App() { return <HashRouter><StoreProvider><div className="app"><header><Link to="/" className="brand">Nurse Pay</Link></header><main><Routes><Route path="/" element={<Home />} /><Route path="/money" element={<Money />} /><Route path="/schedule" element={<Schedule />} /><Route path="/settings" element={<Settings />} /></Routes></main><BottomTabs /><InstallHint /><UpdateBanner /></div></StoreProvider></HashRouter> }

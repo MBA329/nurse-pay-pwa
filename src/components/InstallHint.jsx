@@ -1,0 +1,2 @@
+import { useEffect, useState } from 'react'
+export default function InstallHint() { const [show, setShow] = useState(false); useEffect(() => { const ios = /iphone|ipad|ipod/i.test(navigator.userAgent); setShow(ios && !navigator.standalone && !localStorage.getItem('nurseapp:install-dismissed')) }, []); if (!show) return null; return <div className="install-hint">To install: tap Share, then Add to Home Screen. <button onClick={() => { localStorage.setItem('nurseapp:install-dismissed', '1'); setShow(false) }}>Dismiss</button></div> }
