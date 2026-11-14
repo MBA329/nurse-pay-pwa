@@ -2,6 +2,7 @@ import { AppState } from '../types'
 import { initialState, migrate } from '../lib/migration'
 
 export const STORAGE_KEY = 'nurseapp:v2'
+export { initialState }
 
 export function loadState(): AppState {
   try {
